@@ -8,11 +8,13 @@ public class Prodotto {
     private int productCode;
     private String productName;
     private String productDescription;
-    private int productPrice;
+    private double productPrice;
     private int iva;
+    DecimalFormat euroFormatter = new DecimalFormat("0.00 €");
+
 
     // Constructors
-    public Prodotto(String productName, String productDescription, int productPrice, int iva) {
+    public Prodotto(String productName, String productDescription, double productPrice, int iva) {
         Random random = new Random();
         productCode = random.nextInt(1000000000);
         this.productName = productName;
@@ -23,7 +25,11 @@ public class Prodotto {
 
     // Class Methods
     public String getPrice(){
-        DecimalFormat formatter = new DecimalFormat("0.00 €");
-        return formatter.format(this.productPrice);
+        return this.euroFormatter.format(this.productPrice);
+    }
+
+    public String getIvaPrice(){
+        double ivaPrice =  this.productPrice + (this.productPrice * this.iva) / 100;
+        return this.euroFormatter.format(ivaPrice);
     }
 }
