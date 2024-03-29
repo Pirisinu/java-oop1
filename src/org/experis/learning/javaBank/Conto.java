@@ -1,13 +1,25 @@
 package org.experis.learning.javaBank;
 
+import java.util.Random;
+
 public class Conto {
     // Attributes
     private int accountNumber;
     private String name;
     private double balance;
 
-    // Contructor
 
+
+    // Contructors
+    // Required Contructor
+    public Conto(String name, double balance){
+        Random random = new Random();
+        this.accountNumber = random.nextInt(1000) + 1;
+        this.name = name;
+        this.balance = balance;
+
+    }
+    // Full Contruct
     public Conto(int accountNumber, String name, double balance) {
         this.accountNumber = accountNumber;
         this.name = name;
