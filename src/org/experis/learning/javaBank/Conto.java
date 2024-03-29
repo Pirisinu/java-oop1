@@ -16,6 +16,9 @@ public class Conto {
 
 
     // Methods
+    public void addMoney(double num){
+        this.balance += num;
+    }
     // Getter e Setter
 
     public int getAccountNumber() {
