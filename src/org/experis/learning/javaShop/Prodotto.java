@@ -1,5 +1,6 @@
 package org.experis.learning.javaShop;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Prodotto {
@@ -21,4 +22,8 @@ public class Prodotto {
     }
 
     // Class Methods
+    public String getPrice(){
+        DecimalFormat formatter = new DecimalFormat("0.00 €");
+        return formatter.format(this.productPrice);
+    }
 }
