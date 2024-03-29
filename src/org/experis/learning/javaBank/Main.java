@@ -1,5 +1,6 @@
 package org.experis.learning.javaBank;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Main {
@@ -10,10 +11,10 @@ public class Main {
         System.out.println("Come ti chiami?");
         String name = scan.nextLine();
         System.out.println("Quanti soldi hai sul conto?");
-        int moneyAvailable = Integer.parseInt(scan.nextLine());
+        BigDecimal moneyAvailable = new BigDecimal(scan.nextLine());
         Conto conto1 = new Conto(name, moneyAvailable);
 
-        System.out.println("Benvenuto " + conto1.getName());
+        System.out.println("Benvenuto " + conto1.getName() + " il tuo saldo disponibile è: " + moneyAvailable);
 
         String response = "";
         while (!response.equalsIgnoreCase("esci")) {
@@ -21,12 +22,12 @@ public class Main {
             response = scan.nextLine();
             if (response.equalsIgnoreCase("preleva")) {
                 System.out.println("Quanti soldi vuoi prelevare?");
-                int moneyToTake = Integer.parseInt(scan.nextLine());
+                BigDecimal moneyToTake = new BigDecimal(scan.nextLine());
                 conto1.takeMoney(moneyToTake);
                 System.out.println(conto1.getBalance());
             } else if (response.equalsIgnoreCase("deposita")) {
                 System.out.println("Quanti soldi vuoi depositare?");
-                int moneyToAdd = Integer.parseInt(scan.nextLine());
+                BigDecimal moneyToAdd = new BigDecimal(scan.nextLine());
                 conto1.addMoney(moneyToAdd);
                 System.out.println(conto1.getBalance());
             } else if (!response.equalsIgnoreCase("esci")) {
