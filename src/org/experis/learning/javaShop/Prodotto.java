@@ -35,11 +35,18 @@ public class Prodotto {
         return this.code;
     }
     // Class Methods
-    public String getPrice(){
+    public double getPrice(){
+        return this.price;
+    }
+    public String getFormattedPrice(){
         return this.euroFormatter.format(this.price);
     }
 
-    public String getIvaPrice(){
+    public double getIvaPrice(){
+        double ivaPrice =  this.price + (this.price * this.iva) / 100;
+        return ivaPrice;
+    }
+    public String getFormattedIvaPrice(){
         double ivaPrice =  this.price + (this.price * this.iva) / 100;
         return this.euroFormatter.format(ivaPrice);
     }
