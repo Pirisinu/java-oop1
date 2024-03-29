@@ -18,7 +18,17 @@ public class Conto {
     // Methods
     public void addMoney(double num){
         this.balance += num;
+        System.out.println("Hai depositato con successo: " + num + "euro");
     }
+    public void takeMoney(double num) {
+        if (this.balance >= num) {
+            this.balance -= num;
+            System.out.println("Hai prelevato: " + num + " euro");
+        } else {
+            System.out.println("Non puoi prelevare: non hai abbastanza soldi disponibili!");
+        }
+    }
+
     // Getter e Setter
 
     public int getAccountNumber() {
