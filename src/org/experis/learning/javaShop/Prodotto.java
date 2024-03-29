@@ -23,6 +23,15 @@ public class Prodotto {
         this.iva = iva;
     }
 
+    public String getName(){
+        return this.productName;
+    }
+    public String getDescription(){
+        return this.productDescription;
+    }
+    public int getCode(){
+        return this.productCode;
+    }
     // Class Methods
     public String getPrice(){
         return this.euroFormatter.format(this.productPrice);
@@ -31,5 +40,9 @@ public class Prodotto {
     public String getIvaPrice(){
         double ivaPrice =  this.productPrice + (this.productPrice * this.iva) / 100;
         return this.euroFormatter.format(ivaPrice);
+    }
+
+    public String getFullName(){
+    return null;
     }
 }
