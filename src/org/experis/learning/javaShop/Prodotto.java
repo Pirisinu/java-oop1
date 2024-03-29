@@ -1,5 +1,7 @@
 package org.experis.learning.javaShop;
 
+import java.util.Random;
+
 public class Prodotto {
     // Attributes
     private int productCode;
@@ -9,12 +11,9 @@ public class Prodotto {
     private int iva;
 
     // Constructors
-
-
-
-    // Constructor to set
-    public Prodotto(int productCode, int productName, int productDescription, int productPrice, int iva) {
-        this.productCode = productCode;
+    public Prodotto(String productName, String productDescription, int productPrice, int iva) {
+        Random random = new Random();
+        productCode = random.nextInt(1000000000);
         this.productName = productName;
         this.productDescription = productDescription;
         this.productPrice = productPrice;
