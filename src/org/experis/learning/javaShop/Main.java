@@ -9,5 +9,6 @@ public class Main {
         System.out.println(prodotto.getDescription());
         System.out.println(prodotto.getPrice());
         System.out.println(prodotto.getIvaPrice());
+        System.out.println(prodotto.getFullName());
     }
 }

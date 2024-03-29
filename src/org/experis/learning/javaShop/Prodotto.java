@@ -11,6 +11,7 @@ public class Prodotto {
     private double productPrice;
     private int iva;
     DecimalFormat euroFormatter = new DecimalFormat("0.00 €");
+    DecimalFormat codeFormatter = new DecimalFormat("000000000");
 
 
     // Constructors
@@ -43,6 +44,7 @@ public class Prodotto {
     }
 
     public String getFullName(){
-    return null;
+        String codeFormatted = this.codeFormatter.format(this.productCode);
+    return codeFormatted + "-" + this.productName;
     }
 }
